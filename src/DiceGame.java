@@ -21,8 +21,8 @@ public class DiceGame {
     }
 
     public static int[] throwDice(){
-       int die1 = (int) ((Math.random() * (6-1)) + 1);
-       int die2 = (int) ((Math.random() * (6-1)) + 1);
+       int die1 = (int) ((Math.random() * (6)) + 1);
+       int die2 = (int) ((Math.random() * (6)) + 1);
        return new int[]{die1, die2};
     }
 }
