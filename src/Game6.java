@@ -31,7 +31,7 @@ public class Game6 {
                 System.out.println("Spiller 1 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv! ");
                 p1Sum = 0;
             }else{
-                System.out.print("Spiller 2 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv!");
+                System.out.println("Spiller 2 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv!");
                 p2Sum = 0;
             }
         } else if (dieResults[0]==6 && dieResults[1]==6){
@@ -69,10 +69,10 @@ public class Game6 {
     }
 
     private static void checkWinner(int Player, int[] dieResults) {
-        if (p1sumOver40 && (dieResults[0]==dieResults[1] && Player == 1) || p1ThrowWas6) {
+        if (p1sumOver40 && (dieResults[0] != 1 && dieResults[0]==dieResults[1] && Player == 1) || p1ThrowWas6) {
             System.out.println("Spiller 1 vandt");
             gameIsOver = true;
-        } else if (p2sumOver40 && (dieResults[0]==dieResults[1] && Player == 2) || p2ThrowWas6){
+        } else if (p2sumOver40 && (dieResults[0] != 1 && dieResults[0]==dieResults[1] && Player == 2) || p2ThrowWas6){
             System.out.println("Spiller 2 vandt");
             gameIsOver = true;
         }
@@ -93,7 +93,7 @@ public class Game6 {
     }
 
     private static void checkExtraTurn(int Player, int[] dieResults) {
-        if (dieResults[0] == dieResults[1]) {
+        if (dieResults[0] != 1 && dieResults[0] == dieResults[1]) {
             System.out.println("Spiller " + Player + " har tur igen");
             playGame(Player);
         } else {
