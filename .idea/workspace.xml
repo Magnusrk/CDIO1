@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="476bb75d-899f-40ae-9f1f-0ab03f8ae463" name="Changes" comment="Fjernet winnerFound. Tilføjet at spiller 2 også kan spille">
+    <list default="true" id="476bb75d-899f-40ae-9f1f-0ab03f8ae463" name="Changes" comment="Tilføjet mellemrum mellem spiller og Player variablen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664193408940</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Tilføjet mellemrum mellem spiller og Player variablen">
+      <created>1664193742614</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664193742614</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,6 +108,7 @@
     <MESSAGE value="Rettet sum og point comment" />
     <MESSAGE value="Tilføjet et while loop der stopper når vinderen er fundet" />
     <MESSAGE value="Fjernet winnerFound. Tilføjet at spiller 2 også kan spille" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fjernet winnerFound. Tilføjet at spiller 2 også kan spille" />
+    <MESSAGE value="Tilføjet mellemrum mellem spiller og Player variablen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tilføjet mellemrum mellem spiller og Player variablen" />
   </component>
 </project>

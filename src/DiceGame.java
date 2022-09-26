@@ -17,20 +17,28 @@ public class DiceGame {
                 System.out.println("Spiller " + Player + " kast");
                 input.nextLine();
                 int[] dieResults = throwDice();
-                if (Player == 1) {
-                    p1Sum += dieResults[0] + dieResults[1];
-                    System.out.println("Du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p1Sum);
-                } else {
-                    p2Sum += dieResults[0] + dieResults[1];
-                    System.out.println("Du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p2Sum);
-                }
-                if (p1Sum >= 40) {
-                    System.out.println("Spiller 1 vandt");
-                } else if (p2Sum >= 40){
-                    System.out.println("Spiller 2 vandt");
-                } else {
-                    playGame(Player==1?2:1);
-                }
+                addScores(Player, dieResults);
+                checkWinner(Player);
+    }
+
+    private static void addScores(int Player, int[] dieResults) {
+        if (Player == 1) {
+            p1Sum += dieResults[0] + dieResults[1];
+            System.out.println("Du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p1Sum);
+        } else {
+            p2Sum += dieResults[0] + dieResults[1];
+            System.out.println("Du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p2Sum);
+        }
+    }
+
+    private static void checkWinner(int Player) {
+        if (p1Sum >= 40) {
+            System.out.println("Spiller 1 vandt");
+        } else if (p2Sum >= 40){
+            System.out.println("Spiller 2 vandt");
+        } else {
+            playGame(Player ==1?2:1);
+        }
     }
 
     public static int[] throwDice(){
