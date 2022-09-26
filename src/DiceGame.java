@@ -17,24 +17,41 @@ public class DiceGame {
                 System.out.println("Spiller " + Player + " kast");
                 input.nextLine();
                 int[] dieResults = throwDice();
-                addScores(Player, dieResults);
-                checkWinner(Player);
+        snakeEyesCheck(Player, dieResults);
+
+
+        checkWinner(Player, dieResults);
     }
 
-    private static void addScores(int Player, int[] dieResults) {
-        if (Player == 1) {
-            p1Sum += dieResults[0] + dieResults[1];
-            System.out.println("Du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p1Sum);
-        } else {
-            p2Sum += dieResults[0] + dieResults[1];
-            System.out.println("Du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p2Sum);
+    private static void snakeEyesCheck(int Player, int[] dieResults) {
+        if(dieResults[0]==1 && dieResults[1]==1){
+            if(Player == 1) {
+                System.out.println("Spiller 1 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv! ");
+                p1Sum = 0;
+            }else{
+                System.out.println("Spiller 2 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv!");
+                p2Sum = 0;
+            }
+        }else {
+            addScores(Player, dieResults);
         }
     }
 
-    private static void checkWinner(int Player) {
-        if (p1Sum >= 40) {
+    private static void addScores(int Player, int[] dieResults) {
+
+        if (Player == 1) {
+            p1Sum += dieResults[0] + dieResults[1];
+            System.out.println("Spiller 1 du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p1Sum);
+        } else {
+            p2Sum += dieResults[0] + dieResults[1];
+            System.out.println("Spiller 2 du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p2Sum);
+        }
+    }
+
+    private static void checkWinner(int Player, int[] dieResults) {
+        if (p1Sum >= 40 && dieResults[0]==dieResults[1] && Player == 1) {
             System.out.println("Spiller 1 vandt");
-        } else if (p2Sum >= 40){
+        } else if (p2Sum >= 40 && dieResults[0]==dieResults[1] && Player == 2){
             System.out.println("Spiller 2 vandt");
         } else {
             playGame(Player ==1?2:1);
