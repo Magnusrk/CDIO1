@@ -4,6 +4,10 @@ public class DiceGame {
     static boolean p1Turn = true;
     static int p1Sum;
     static int p2Sum;
+    static boolean p1is6;
+    static boolean Wasp1is6;
+    static boolean p2is6;
+    static boolean wasp2is6;
 
 
     public static void main(String[] args) {
@@ -28,7 +32,25 @@ public class DiceGame {
                 System.out.println("Spiller 2 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv!");
                 p2Sum = 0;
             }
-        }else {
+        } else if (dieResults[0]==6 && dieResults[1]==6){
+            if(p1is6 || p2is6){
+                if (Player == 1){
+                    Wasp1is6 = true;
+                }
+                else {
+                    wasp2is6 = true;
+                }
+            }
+            if(Player == 1){
+                p1is6 = true;
+                addScores(Player, dieResults);
+            }
+            else{
+                p2is6 = true;
+                addScores(Player, dieResults);
+            }
+        }
+        else {
             addScores(Player, dieResults);
         }
     }
@@ -45,9 +67,9 @@ public class DiceGame {
     }
 
     private static void checkWinner(int Player, int[] dieResults) {
-        if (p1Sum >= 40 && dieResults[0]==dieResults[1] && Player == 1) {
+        if (p1Sum >= 40 && (dieResults[0]==dieResults[1] && Player == 1) || Wasp1is6) {
             System.out.println("Spiller 1 vandt");
-        } else if (p2Sum >= 40 && dieResults[0]==dieResults[1] && Player == 2){
+        } else if (p2Sum >= 40 && (dieResults[0]==dieResults[1] && Player == 2) || wasp2is6){
             System.out.println("Spiller 2 vandt");
         } else checkExtraTurn(Player, dieResults);
     }
