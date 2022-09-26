@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476bb75d-899f-40ae-9f1f-0ab03f8ae463" name="Changes" comment="Nu kan man ikke spille igen hvis man slår to enere">
-      <change beforePath="$PROJECT_DIR$/src/Game5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game5.java" afterDir="false" />
-    </list>
+    <list default="true" id="476bb75d-899f-40ae-9f1f-0ab03f8ae463" name="Changes" comment="Slettet noget vi ikke brugte i game1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,7 +150,49 @@
       <option name="project" value="LOCAL" />
       <updated>1664212832755</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Nu kan man ikke spille igen hvis man slår to enere i game 5">
+      <created>1664212920694</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1664212920694</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Slettet noget vi ikke brugte">
+      <created>1664212942301</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1664212942301</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Slettet noget vi ikke brugte i game4">
+      <created>1664213026760</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1664213026760</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Slettet noget vi ikke brugte i game3">
+      <created>1664213097531</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1664213097531</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Slettet noget vi ikke brugte i game2">
+      <created>1664213120671</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1664213120673</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Slettet noget vi ikke brugte i game1">
+      <created>1664213148405</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1664213148405</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +225,12 @@
     <MESSAGE value="Ændret flere variable navne" />
     <MESSAGE value="tilføjet kommentare til booleans" />
     <MESSAGE value="Nu kan man ikke spille igen hvis man slår to enere" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nu kan man ikke spille igen hvis man slår to enere" />
+    <MESSAGE value="Nu kan man ikke spille igen hvis man slår to enere i game 5" />
+    <MESSAGE value="Slettet noget vi ikke brugte" />
+    <MESSAGE value="Slettet noget vi ikke brugte i game4" />
+    <MESSAGE value="Slettet noget vi ikke brugte i game3" />
+    <MESSAGE value="Slettet noget vi ikke brugte i game2" />
+    <MESSAGE value="Slettet noget vi ikke brugte i game1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Slettet noget vi ikke brugte i game1" />
   </component>
 </project>
