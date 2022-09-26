@@ -7,9 +7,7 @@ public class DiceGame {
 
 
     public static void main(String[] args) {
-
             playGame(1);
-
     }
 
     public static void playGame(int Player){
@@ -17,8 +15,8 @@ public class DiceGame {
                 System.out.println("Spiller " + Player + " kast");
                 input.nextLine();
                 int[] dieResults = throwDice();
-        snakeEyesCheck(Player, dieResults);
-        checkWinner(Player, dieResults);
+                snakeEyesCheck(Player, dieResults);
+                checkWinner(Player, dieResults);
     }
 
     private static void snakeEyesCheck(int Player, int[] dieResults) {
