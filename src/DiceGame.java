@@ -16,7 +16,7 @@ public class DiceGame {
         input.nextLine();
         int [] dieResults = throwDice();
         p1Sum = p1Sum+ dieResults[0]+ dieResults[1];
-        System.out.println("Du kastede "+ dieResults[0] + " og " + dieResults[1] + " Dine point " + (dieResults[0]+dieResults[1])+ " summen " + p1Sum);
+        System.out.println("Du kastede "+ dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0]+dieResults[1])+ " Dine point: " + p1Sum);
         playGame();
     }
 
