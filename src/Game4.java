@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Game4 {
-    static boolean p1Turn = true;
     static int p1Sum;
     static int p2Sum;
     static boolean p1wasSix = false;
@@ -71,7 +70,7 @@ public class Game4 {
     }
 
     private static void checkExtraTurn(int Player, int[] dieResults) {
-        if (dieResults[0] == dieResults[1]) {
+        if (dieResults[0] != 1 && dieResults[0] == dieResults[1]) {
             System.out.println("Spiller " + Player + " har tur igen");
             playGame(Player);
         } else {
