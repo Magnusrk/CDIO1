@@ -18,8 +18,6 @@ public class DiceGame {
                 input.nextLine();
                 int[] dieResults = throwDice();
         snakeEyesCheck(Player, dieResults);
-
-
         checkWinner(Player, dieResults);
     }
 
@@ -53,14 +51,21 @@ public class DiceGame {
             System.out.println("Spiller 1 vandt");
         } else if (p2Sum >= 40 && dieResults[0]==dieResults[1] && Player == 2){
             System.out.println("Spiller 2 vandt");
-        } else {
-            playGame(Player ==1?2:1);
-        }
+        } else checkExtraTurn(Player, dieResults);
     }
 
     public static int[] throwDice(){
        int die1 = (int) ((Math.random() * (6)) + 1);
        int die2 = (int) ((Math.random() * (6)) + 1);
        return new int[]{die1, die2};
+    }
+
+    private static void checkExtraTurn(int Player, int[] dieResults) {
+        if (dieResults[0] == dieResults[1]) {
+            System.out.println("Spiller " + Player + " har tur igen");
+            playGame(Player);
+        } else {
+            playGame(Player == 1 ? 2 : 1);
+        }
     }
 }
