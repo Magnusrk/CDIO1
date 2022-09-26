@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476bb75d-899f-40ae-9f1f-0ab03f8ae463" name="Changes" comment="Ændret flere variable navne">
-      <change beforePath="$PROJECT_DIR$/src/Game6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game6.java" afterDir="false" />
+    <list default="true" id="476bb75d-899f-40ae-9f1f-0ab03f8ae463" name="Changes" comment="Nu kan man ikke spille igen hvis man slår to enere">
+      <change beforePath="$PROJECT_DIR$/src/Game5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game5.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +138,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664212377190</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="tilføjet kommentare til booleans">
+      <created>1664212550629</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1664212550629</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Nu kan man ikke spille igen hvis man slår to enere">
+      <created>1664212832755</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1664212832755</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +183,8 @@
     <MESSAGE value="slettet p1turn" />
     <MESSAGE value="Ændret variable navne" />
     <MESSAGE value="Ændret flere variable navne" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ændret flere variable navne" />
+    <MESSAGE value="tilføjet kommentare til booleans" />
+    <MESSAGE value="Nu kan man ikke spille igen hvis man slår to enere" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nu kan man ikke spille igen hvis man slår to enere" />
   </component>
 </project>

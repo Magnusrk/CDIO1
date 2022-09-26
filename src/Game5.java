@@ -70,10 +70,10 @@ public class Game5 {
     }
 
     private static void checkWinner(int Player, int[] dieResults) {
-        if (p1sumOver40 && (dieResults[0]==dieResults[1] && Player == 1) || Wasp1is6) {
+        if (p1sumOver40 && (dieResults[0] != 1 && dieResults[0]==dieResults[1] && Player == 1) || Wasp1is6) {
             System.out.println("Spiller 1 vandt");
             gameIsOver = true;
-        } else if (p2sumOver40 && (dieResults[0]==dieResults[1] && Player == 2) || wasp2is6){
+        } else if (p2sumOver40 && (dieResults[0] != 1 && dieResults[0]==dieResults[1] && Player == 2) || wasp2is6){
             System.out.println("Spiller 2 vandt");
             gameIsOver = true;
         }
@@ -94,7 +94,7 @@ public class Game5 {
     }
 
     private static void checkExtraTurn(int Player, int[] dieResults) {
-        if (dieResults[0] == dieResults[1]) {
+        if (dieResults[0] != 1 && dieResults[0] == dieResults[1]) {
             System.out.println("Spiller " + Player + " har tur igen");
             playGame(Player);
         } else {
