@@ -20,7 +20,7 @@ public class DiceGame {
         snakeEyesCheck(Player, dieResults);
 
 
-        checkWinner(Player);
+        checkWinner(Player, dieResults);
     }
 
     private static void snakeEyesCheck(int Player, int[] dieResults) {
@@ -48,10 +48,10 @@ public class DiceGame {
         }
     }
 
-    private static void checkWinner(int Player) {
-        if (p1Sum >= 40) {
+    private static void checkWinner(int Player, int[] dieResults) {
+        if (p1Sum >= 40 && dieResults[0]==dieResults[1] && Player == 1) {
             System.out.println("Spiller 1 vandt");
-        } else if (p2Sum >= 40){
+        } else if (p2Sum >= 40 && dieResults[0]==dieResults[1] && Player == 2){
             System.out.println("Spiller 2 vandt");
         } else {
             playGame(Player ==1?2:1);
