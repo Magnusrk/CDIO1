@@ -4,9 +4,9 @@ public class Game6 {
     static int p1Sum;
     static int p2Sum;
     static boolean p1ThrowIs6;
-    static boolean Wasp1is6;
-    static boolean p6ThrowIs6;
-    static boolean wasp2is6;
+    static boolean p1ThrowWas6;
+    static boolean p2ThrowIs6;
+    static boolean p2ThrowWas6;
     static boolean p1sumOver40;
     static boolean p2sumOver40;
     static boolean gameIsOver;
@@ -35,12 +35,12 @@ public class Game6 {
                 p2Sum = 0;
             }
         } else if (dieResults[0]==6 && dieResults[1]==6){
-            if(p1ThrowIs6 || p6ThrowIs6){
+            if(p1ThrowIs6 || p2ThrowIs6){
                 if (Player == 1){
-                    Wasp1is6 = true;
+                    p1ThrowWas6 = true;
                 }
                 else {
-                    wasp2is6 = true;
+                    p2ThrowWas6 = true;
                 }
             }
             if(Player == 1){
@@ -48,7 +48,7 @@ public class Game6 {
                 addScores(Player, dieResults);
             }
             else{
-                p6ThrowIs6 = true;
+                p2ThrowIs6 = true;
                 addScores(Player, dieResults);
             }
         }
@@ -69,10 +69,10 @@ public class Game6 {
     }
 
     private static void checkWinner(int Player, int[] dieResults) {
-        if (p1sumOver40 && (dieResults[0]==dieResults[1] && Player == 1) || Wasp1is6) {
+        if (p1sumOver40 && (dieResults[0]==dieResults[1] && Player == 1) || p1ThrowWas6) {
             System.out.println("Spiller 1 vandt");
             gameIsOver = true;
-        } else if (p2sumOver40 && (dieResults[0]==dieResults[1] && Player == 2) || wasp2is6){
+        } else if (p2sumOver40 && (dieResults[0]==dieResults[1] && Player == 2) || p2ThrowWas6){
             System.out.println("Spiller 2 vandt");
             gameIsOver = true;
         }
