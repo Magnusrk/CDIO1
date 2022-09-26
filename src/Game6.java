@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Game6 {
     static int p1Sum;
     static int p2Sum;
-    static boolean p1is6;
+    static boolean p1ThrowIs6;
     static boolean Wasp1is6;
-    static boolean p2is6;
+    static boolean p6ThrowIs6;
     static boolean wasp2is6;
     static boolean p1sumOver40;
     static boolean p2sumOver40;
@@ -31,11 +31,11 @@ public class Game6 {
                 System.out.println("Spiller 1 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv! ");
                 p1Sum = 0;
             }else{
-                System.out.println("Spiller 2 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv!");
+                System.out.print("Spiller 2 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv!");
                 p2Sum = 0;
             }
         } else if (dieResults[0]==6 && dieResults[1]==6){
-            if(p1is6 || p2is6){
+            if(p1ThrowIs6 || p6ThrowIs6){
                 if (Player == 1){
                     Wasp1is6 = true;
                 }
@@ -44,11 +44,11 @@ public class Game6 {
                 }
             }
             if(Player == 1){
-                p1is6 = true;
+                p1ThrowIs6 = true;
                 addScores(Player, dieResults);
             }
             else{
-                p2is6 = true;
+                p6ThrowIs6 = true;
                 addScores(Player, dieResults);
             }
         }
