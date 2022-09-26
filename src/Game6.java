@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 public class Game6 {
-    static int p1Sum;
-    static int p2Sum;
-    static boolean p1ThrowIs6;
-    static boolean p1ThrowWas6;
-    static boolean p2ThrowIs6;
-    static boolean p2ThrowWas6;
-    static boolean p1sumOver40;
-    static boolean p2sumOver40;
+    static int p1Sum; //Player 1 sum
+    static int p2Sum; //Player 2 sum
+    static boolean p1ThrowIs6; //Player 1 throw is 6
+    static boolean p1ThrowWas6; //Player 1 throw was 6
+    static boolean p2ThrowIs6; //Player 2 throw is 6
+    static boolean p2ThrowWas6; //Player 2 throw was 6
+    static boolean p1sumOver40; //Player 1 point is over 40
+    static boolean p2sumOver40; //Player 2 point is over 40
     static boolean gameIsOver;
 
 
