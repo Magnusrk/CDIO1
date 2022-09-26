@@ -8,6 +8,9 @@ public class DiceGame {
     static boolean Wasp1is6;
     static boolean p2is6;
     static boolean wasp2is6;
+    static boolean p1sumOver40;
+    static boolean p2sumOver40;
+    static boolean gameIsOver;
 
 
     public static void main(String[] args) {
@@ -67,11 +70,21 @@ public class DiceGame {
     }
 
     private static void checkWinner(int Player, int[] dieResults) {
-        if (p1Sum >= 40 && (dieResults[0]==dieResults[1] && Player == 1) || Wasp1is6) {
+        if (p1sumOver40 && (dieResults[0]==dieResults[1] && Player == 1) || Wasp1is6) {
             System.out.println("Spiller 1 vandt");
-        } else if (p2Sum >= 40 && (dieResults[0]==dieResults[1] && Player == 2) || wasp2is6){
+            gameIsOver = true;
+        } else if (p2sumOver40 && (dieResults[0]==dieResults[1] && Player == 2) || wasp2is6){
             System.out.println("Spiller 2 vandt");
-        } else checkExtraTurn(Player, dieResults);
+            gameIsOver = true;
+        }
+        if (p1Sum >= 40){
+            p1sumOver40 = true;
+        } else if (p2Sum >= 40) {
+            p2sumOver40 = true;
+        }
+        if (!gameIsOver) {
+            checkExtraTurn(Player, dieResults);
+        }
     }
 
     public static int[] throwDice(){
