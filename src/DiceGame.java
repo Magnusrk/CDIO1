@@ -14,7 +14,7 @@ public class DiceGame {
 
     public static void playGame(int Player){
                 Scanner input = new Scanner(System.in);
-                System.out.println("Spiller" + Player + "kast");
+                System.out.println("Spiller " + Player + " kast");
                 input.nextLine();
                 int[] dieResults = throwDice();
                 if (Player == 1) {
@@ -24,7 +24,6 @@ public class DiceGame {
                     p2Sum += dieResults[0] + dieResults[1];
                     System.out.println("Du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p2Sum);
                 }
-
                 if (p1Sum >= 40) {
                     System.out.println("Spiller 1 vandt");
                 } else if (p2Sum >= 40){
