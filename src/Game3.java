@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Game3 {
-    static boolean p1Turn = true;
     static int p1Sum;
     static int p2Sum;
 
