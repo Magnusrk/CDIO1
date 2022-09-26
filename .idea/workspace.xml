@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476bb75d-899f-40ae-9f1f-0ab03f8ae463" name="Changes" comment="Fikset fejl så man ikke kan vinde når man har under 40 point" />
+    <list default="true" id="476bb75d-899f-40ae-9f1f-0ab03f8ae463" name="Changes" comment="lavet spil 4">
+      <change beforePath="$PROJECT_DIR$/src/Game5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game5.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664201843663</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="lavet spil 4">
+      <created>1664203473222</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664203473222</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +136,7 @@
     <MESSAGE value="Tilføjet mellemrum mellem spiller og Player variablen" />
     <MESSAGE value="Har lagt noget af koden ind i metoder" />
     <MESSAGE value="Fikset fejl så man ikke kan vinde når man har under 40 point" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fikset fejl så man ikke kan vinde når man har under 40 point" />
+    <MESSAGE value="lavet spil 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="lavet spil 4" />
   </component>
 </project>
