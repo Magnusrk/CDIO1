@@ -46,13 +46,11 @@ public class Game4 {
             p1Sum += dieResults[0] + dieResults[1];
             p1wasSix = dieResults[0] == 6 && dieResults[1] == 6;
             System.out.println("Du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p1Sum);
-            System.out.println(p1wasSix);
         } else {
             isP2wasSix = p2wasSix && dieResults[0] == 6 && dieResults[1] == 6;
             p2Sum += dieResults[0] + dieResults[1];
             p2wasSix = dieResults[0] == 6 && dieResults[1] == 6;
             System.out.println("Du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p2Sum);
-            System.out.println(p2wasSix);
         }
     }
 
