@@ -2,12 +2,15 @@ import java.util.Scanner;
 
 public class DiceGame {
     boolean p1Turn = true;
+    static boolean winnerFound = false;
     static int p1Sum;
     int p2Sum;
 
-    public static void main(String[] args) {
-        playGame();
 
+    public static void main(String[] args) {
+        while (winnerFound == false) {
+            playGame();
+        }
     }
 
     public static void playGame(){
