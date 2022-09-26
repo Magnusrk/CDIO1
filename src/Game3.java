@@ -20,7 +20,7 @@ public class Game3 {
         snakeEyesCheck(Player, dieResults);
 
 
-        checkWinner(Player);
+        checkWinner(Player, dieResults);
     }
 
     private static void snakeEyesCheck(int Player, int[] dieResults) {
@@ -48,13 +48,13 @@ public class Game3 {
         }
     }
 
-    private static void checkWinner(int Player) {
+    private static void checkWinner(int Player, int[] dieResults) {
         if (p1Sum >= 40) {
             System.out.println("Spiller 1 vandt");
         } else if (p2Sum >= 40){
             System.out.println("Spiller 2 vandt");
         } else {
-            playGame(Player ==1?2:1);
+            checkExtraTurn(Player, dieResults);
         }
     }
 
@@ -63,4 +63,14 @@ public class Game3 {
         int die2 = (int) ((Math.random() * (6)) + 1);
         return new int[]{die1, die2};
     }
+
+    private static void checkExtraTurn(int Player, int[] dieResults) {
+        if (dieResults[0] == dieResults[1]) {
+            System.out.println("Spiller " + Player + " har tur igen");
+            playGame(Player);
+        } else {
+            playGame(Player == 1 ? 2 : 1);
+        }
+    }
 }
+
