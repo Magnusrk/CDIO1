@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="476bb75d-899f-40ae-9f1f-0ab03f8ae463" name="Changes" comment="- Lavet test a dice kast (Se DiceTest.java)&#10;- Ændret throwDice(), så der også kan slås 6.">
+    <list default="true" id="476bb75d-899f-40ae-9f1f-0ab03f8ae463" name="Changes" comment="Fjernet winnerFound. Tilføjet at spiller 2 også kan spille">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DiceGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +60,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663598723252</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Tilføjet et while loop der stopper når vinderen er fundet">
+      <created>1664192041087</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664192041087</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fjernet winnerFound. Tilføjet at spiller 2 også kan spille">
+      <created>1664193408940</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664193408940</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -79,6 +94,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Oprettet projektet" />
     <MESSAGE value="Oprettet throwDice klasse" />
-    <option name="LAST_COMMIT_MESSAGE" value="Oprettet throwDice klasse" />
+    <MESSAGE value="Rettet sum og point comment" />
+    <MESSAGE value="Tilføjet et while loop der stopper når vinderen er fundet" />
+    <MESSAGE value="Fjernet winnerFound. Tilføjet at spiller 2 også kan spille" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fjernet winnerFound. Tilføjet at spiller 2 også kan spille" />
   </component>
 </project>
