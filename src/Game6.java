@@ -38,21 +38,18 @@ public class Game6 {
             if(p1ThrowIs6 || p2ThrowIs6){
                 if (Player == 1){
                     p1ThrowWas6 = true;
-                }
-                else {
+                } else {
                     p2ThrowWas6 = true;
                 }
             }
             if(Player == 1){
                 p1ThrowIs6 = true;
                 addScores(Player, dieResults);
-            }
-            else{
+            } else{
                 p2ThrowIs6 = true;
                 addScores(Player, dieResults);
             }
-        }
-        else {
+        } else {
             addScores(Player, dieResults);
         }
     }
