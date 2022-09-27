@@ -4,13 +4,16 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import javax.swing.JPanel;
 import java.awt.event.KeyEvent;
+import javax.swing.Timer;
+
 
 public class DiceUI extends JFrame {
-
-    public diceBoard DiceBoard;
+    public static diceBoard DiceBoard;
     public DiceUI() {
 
         initUI();
@@ -19,51 +22,38 @@ public class DiceUI extends JFrame {
     private void initUI() {
         DiceBoard = new diceBoard();
         add(DiceBoard);
-
         setResizable(false);
         pack();
-
-        setTitle("Dice game!");
+        setTitle("Terningespil!");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
-    public static void main(String[] args) {
-
-        EventQueue.invokeLater(() -> {
-            JFrame ex = new DiceUI();
-            ex.setVisible(true);
-        });
-    }
 }
 
-class diceBoard extends JPanel
+class diceBoard extends JPanel implements ActionListener
 {
-
-
     final int B_WIDTH = 700;
     final int B_HEIGHT = 700;
-
     final int DieSize = 100;
-
-    private int turn = 1;
+    public static int turn = 1;
     private int p1Score = 0;
     private int p2Score = 0;
+    private int input_delay = 10;
+
+    private Timer timer;
+
+    public static boolean rollingDies = false;
+
+    private static String statusMessage = "Velkommen til terningespillet!";
 
     private int d1 = 1;
     private int d2 = 1;
+
     public diceBoard() {
         initDiceBoard();
 
     }
 
-    public void DrawGraphics(int playerTurn, int Player1Score, int Player2Score)
-    {
-        turn = playerTurn;
-        p1Score = Player1Score;
-        p2Score = Player2Score;
-        repaint();
-    }
 
     public void DrawGraphics(int playerTurn, int Player1Score, int Player2Score,int diceValue1, int diceValue2 )
     {
@@ -75,6 +65,11 @@ class diceBoard extends JPanel
         repaint();
     }
 
+    public void UpdateMessage(String message)
+    {
+        statusMessage = message;
+        repaint();
+    }
 
 
     private void initDiceBoard() {
@@ -82,6 +77,8 @@ class diceBoard extends JPanel
         setBackground(Color.getHSBColor(0.5f, 0.96f, 0.1f));
         setFocusable(true);
         setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
+        timer = new Timer(input_delay, this);
+        timer.start();
         repaint();
     }
 
@@ -97,6 +94,12 @@ class diceBoard extends JPanel
         drawPlayerNames(g);
         drawPlayerScores(g);
         drawDies(g);
+        g.setFont(g.getFont().deriveFont(20f));
+        g.setColor(Color.white);
+
+        g.drawString("Tryk 'enter' for at rulle terningerne!", B_WIDTH/2-160,B_HEIGHT-100);
+        g.setFont(g.getFont().deriveFont(15f));
+        g.drawString(statusMessage, (B_WIDTH/2) - (int)((float)statusMessage.length()*3.5f),B_HEIGHT-400);
         Toolkit.getDefaultToolkit().sync();
     }
 
@@ -107,7 +110,6 @@ class diceBoard extends JPanel
         g.setColor(Color.white);
         g.fillRect((B_WIDTH/4)-DieSize/2, (B_HEIGHT/5)*3, DieSize, DieSize );
         g.fillRect(((B_WIDTH/4)*3)-DieSize/2, (B_HEIGHT/5)*3, DieSize, DieSize );
-
         g.setColor(Color.black);
         g.drawString(""+d1, (B_WIDTH/4)-((int)dieFont/4),((B_HEIGHT/5)*3)+DieSize/4+((int)dieFont));
         g.drawString(""+d2, (B_WIDTH/4)*3-((int)dieFont/4),((B_HEIGHT/5)*3)+DieSize/4+((int)dieFont));
@@ -124,28 +126,36 @@ class diceBoard extends JPanel
         g.setFont(g.getFont().deriveFont(20f));
         if(turn == 1) {
             g.setColor(Color.green);
-            g.drawString("Player 1", 30,30);
+            g.drawString("Spiller 1", 30,30);
             g.setColor(Color.white);
-            g.drawString("Player 2", B_WIDTH - 150,30);
+            g.drawString("Spiller 2", B_WIDTH - 150,30);
         }
         else {
             g.setColor(Color.white);
-            g.drawString("Player 1", 30,30);
+            g.drawString("Spiller 1", 30,30);
             g.setColor(Color.green);
-            g.drawString("Player 2", B_WIDTH - 150,30);
+            g.drawString("Spiller 2", B_WIDTH - 150,30);
         }
     }
 
+    public void actionPerformed(ActionEvent e) {
+        rollingDies = false;
 
+    }
 }
 class TAdapter extends KeyAdapter {
-
 
     @Override
     public void keyPressed(KeyEvent e)
     {
+        int key = e.getKeyCode();
+        if(key == KeyEvent.VK_ENTER && !DiceUI.DiceBoard.rollingDies)
+        {
+
+            DiceGame.playGame(diceBoard.turn);
+            DiceUI.DiceBoard.rollingDies = true;
+        }
 
     }
-
 
 }
