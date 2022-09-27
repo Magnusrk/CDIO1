@@ -1,4 +1,3 @@
-import java.awt.*;
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -152,7 +151,7 @@ class TAdapter extends KeyAdapter {
         if(key == KeyEvent.VK_ENTER && !DiceUI.DiceBoard.rollingDies)
         {
 
-            DiceGame.playGame(diceBoard.turn);
+            Game6.playGame(diceBoard.turn);
             DiceUI.DiceBoard.rollingDies = true;
         }
 

@@ -1,15 +1,8 @@
 import java.util.Scanner;
 import java.awt.*;
 import javax.swing.*;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Toolkit;
-import java.awt.event.KeyAdapter;
-import javax.swing.JPanel;
-import java.awt.event.KeyEvent;
 
-public class DiceGame {
+public class Game6 {
     static boolean p1Turn = true;
     static int p1Sum;
     static int p2Sum;
