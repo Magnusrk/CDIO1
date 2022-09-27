@@ -64,6 +64,8 @@ class diceBoard extends JPanel implements ActionListener
         repaint();
     }
 
+
+
     public void UpdateMessage(String message)
     {
         statusMessage = message;

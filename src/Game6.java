@@ -39,7 +39,7 @@ public class Game6 {
         int[] dieResults = throwDice();
         snakeEyesCheck(Player, dieResults);
         ui.DiceBoard.DrawGraphics(Player == 1 ? 2 : 1, p1Sum,p2Sum, dieResults[0], dieResults[1]);
-        checkWinner(Player);
+        checkWinner(Player, dieResults);
     }
 
     private static void snakeEyesCheck(int Player, int[] dieResults) {
@@ -98,6 +98,17 @@ public class Game6 {
         if (!gameIsOver) {
             checkExtraTurn(Player, dieResults);
         }
+        else
+        {
+            resetGame();
+        }
+    }
+
+    private static void resetGame()
+    {
+        gameIsOver = false;
+        p1Sum = 0;
+        p2Sum = 0;
     }
 
     public static int[] throwDice(){
@@ -108,8 +119,8 @@ public class Game6 {
 
     private static void checkExtraTurn(int Player, int[] dieResults) {
         if (dieResults[0] != 1 && dieResults[0] == dieResults[1]) {
-            System.out.println("Spiller " + Player + " har tur igen");
-            playGame(Player);
+            ui.DiceBoard.DrawGraphics(Player, p1Sum,p2Sum, dieResults[0], dieResults[1]);
+            ui.DiceBoard.UpdateMessage("Spiller " + Player + " har tur igen");;
         }
     }
 }
