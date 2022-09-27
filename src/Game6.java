@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.awt.*;
 import javax.swing.*;
 
@@ -15,7 +14,6 @@ public class Game6 {
     static DiceUI ui;
 
     public static void main(String[] args) {
-
             initGame();
     }
 
@@ -26,11 +24,7 @@ public class Game6 {
             JFrame ex = ui;
             ex.setVisible(true);
             DiceUI.DiceBoard.DrawGraphics(1, p1Sum,p2Sum, 1, 1);
-
-
         });
-
-
     }
 
     public static void playGame(int Player){
