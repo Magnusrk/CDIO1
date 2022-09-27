@@ -26,11 +26,7 @@ public class Game6 {
             JFrame ex = ui;
             ex.setVisible(true);
             ui.DiceBoard.DrawGraphics(1, p1Sum,p2Sum, 1, 1);
-
-
         });
-
-
     }
 
     public static void playGame(int Player){
@@ -47,17 +43,18 @@ public class Game6 {
             if(Player == 1) {
                 ui.DiceBoard.UpdateMessage("Spiller 1 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv! ");
                 p1Sum = 0;
+                p1sumOver40 = false;
             }else{
                 ui.DiceBoard.UpdateMessage("Spiller 2 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv! ");
                 p2Sum = 0;
+                p2sumOver40 = false;
             }
         } else if (dieResults[0]==6 && dieResults[1]==6){
-            if(p1ThrowIs6 || p2ThrowIs6){
-                if (Player == 1){
-                    p1ThrowWas6 = true;
-                } else {
-                    p2ThrowWas6 = true;
+            if(p1ThrowIs6 && Player == 1){
+                p1ThrowWas6 = true;
                 }
+            else if (p2ThrowIs6 && Player == 2){
+                p2ThrowWas6 = true;
             }
             if(Player == 1){
                 p1ThrowIs6 = true;
@@ -68,6 +65,8 @@ public class Game6 {
             }
         } else {
             addScores(Player, dieResults);
+            p1ThrowIs6 = false;
+            p2ThrowIs6 = false;
         }
     }
 
@@ -87,12 +86,13 @@ public class Game6 {
             ui.DiceBoard.UpdateMessage("Spiller 1 vandt!");
             gameIsOver = true;
         } else if (p2sumOver40 && (dieResults[0] != 1 && dieResults[0]==dieResults[1] && Player == 2) || p2ThrowWas6){
-            ui.DiceBoard.UpdateMessage("Spiller 2 vandt!");;
+            ui.DiceBoard.UpdateMessage("Spiller 2 vandt!");
             gameIsOver = true;
         }
         if (p1Sum >= 40){
             p1sumOver40 = true;
-        } else if (p2Sum >= 40) {
+        }
+        if (p2Sum >= 40) {
             p2sumOver40 = true;
         }
         if (!gameIsOver) {
@@ -109,6 +109,12 @@ public class Game6 {
         gameIsOver = false;
         p1Sum = 0;
         p2Sum = 0;
+        p1sumOver40 = false;
+        p2sumOver40 = false;
+        p1ThrowIs6 = false;
+        p2ThrowIs6 = false;
+        p1ThrowWas6 = false;
+        p2ThrowWas6 = false;
     }
 
     public static int[] throwDice(){
