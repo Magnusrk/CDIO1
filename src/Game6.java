@@ -25,27 +25,31 @@ public class Game6 {
             ui = new DiceUI();
             JFrame ex = ui;
             ex.setVisible(true);
-            ui.DiceBoard.DrawGraphics(1, p1Sum,p2Sum, 1, 1);
+            DiceUI.DiceBoard.DrawGraphics(1, p1Sum,p2Sum, 1, 1);
+
+
         });
+
+
     }
 
     public static void playGame(int Player){
-        ui.DiceBoard.UpdateMessage("Spiller " + Player + "'s tur! ");
+        DiceUI.DiceBoard.UpdateMessage("Spiller " + Player + "'s tur! ");
         //input.nextLine();
         int[] dieResults = throwDice();
         snakeEyesCheck(Player, dieResults);
-        ui.DiceBoard.DrawGraphics(Player == 1 ? 2 : 1, p1Sum,p2Sum, dieResults[0], dieResults[1]);
+        DiceUI.DiceBoard.DrawGraphics(Player == 1 ? 2 : 1, p1Sum,p2Sum, dieResults[0], dieResults[1]);
         checkWinner(Player, dieResults);
     }
 
     private static void snakeEyesCheck(int Player, int[] dieResults) {
         if(dieResults[0]==1 && dieResults[1]==1){
             if(Player == 1) {
-                ui.DiceBoard.UpdateMessage("Spiller 1 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv! ");
+                DiceUI.DiceBoard.UpdateMessage("Spiller 1 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv! ");
                 p1Sum = 0;
                 p1sumOver40 = false;
             }else{
-                ui.DiceBoard.UpdateMessage("Spiller 2 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv! ");
+                DiceUI.DiceBoard.UpdateMessage("Spiller 2 du kastede " + dieResults[0] + " og " + dieResults[1] + " Det er 2 enere du mister alle dine point. Øv! ");
                 p2Sum = 0;
                 p2sumOver40 = false;
             }
@@ -74,19 +78,19 @@ public class Game6 {
 
         if (Player == 1) {
             p1Sum += dieResults[0] + dieResults[1];
-            ui.DiceBoard.UpdateMessage("Spiller 1 du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p1Sum);
+            DiceUI.DiceBoard.UpdateMessage("Spiller 1 du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p1Sum);
         } else {
             p2Sum += dieResults[0] + dieResults[1];
-            ui.DiceBoard.UpdateMessage("Spiller 2 du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p2Sum);
+            DiceUI.DiceBoard.UpdateMessage("Spiller 2 du kastede " + dieResults[0] + " og " + dieResults[1] + " Summen: " + (dieResults[0] + dieResults[1]) + " Dine point: " + p2Sum);
         }
     }
 
     private static void checkWinner(int Player, int[] dieResults) {
         if (p1sumOver40 && (dieResults[0] != 1 && dieResults[0]==dieResults[1] && Player == 1) || p1ThrowWas6) {
-            ui.DiceBoard.UpdateMessage("Spiller 1 vandt!");
+            DiceUI.DiceBoard.UpdateMessage("Spiller 1 vandt!");
             gameIsOver = true;
         } else if (p2sumOver40 && (dieResults[0] != 1 && dieResults[0]==dieResults[1] && Player == 2) || p2ThrowWas6){
-            ui.DiceBoard.UpdateMessage("Spiller 2 vandt!");
+            DiceUI.DiceBoard.UpdateMessage("Spiller 2 vandt!");
             gameIsOver = true;
         }
         if (p1Sum >= 40){
@@ -125,8 +129,8 @@ public class Game6 {
 
     private static void checkExtraTurn(int Player, int[] dieResults) {
         if (dieResults[0] != 1 && dieResults[0] == dieResults[1]) {
-            ui.DiceBoard.DrawGraphics(Player, p1Sum,p2Sum, dieResults[0], dieResults[1]);
-            ui.DiceBoard.UpdateMessage("Spiller " + Player + " har tur igen");;
+            DiceUI.DiceBoard.DrawGraphics(Player, p1Sum,p2Sum, dieResults[0], dieResults[1]);
+            DiceUI.DiceBoard.UpdateMessage("Spiller " + Player + " har tur igen");
         }
     }
 }
