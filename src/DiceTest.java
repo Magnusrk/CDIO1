@@ -6,6 +6,7 @@ public class DiceTest {
         int[] sums = new int[testCount];                //Initialiser et array med ligeså mange elementer som kast
         int ens = 0;
 
+        System.out.println("Så mange slag slået "+ testCount);
         for(int i = 0; i < testCount; i++)
         {
             int[] diceThrow = DiceGame.throwDice();     //Kast terningerne og tilføj summen til listen

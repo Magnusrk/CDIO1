@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476bb75d-899f-40ae-9f1f-0ab03f8ae463" name="Changes" comment="Commit">
-      <change afterPath="$PROJECT_DIR$/src/OneDieTest.java" afterDir="false" />
+    <list default="true" id="476bb75d-899f-40ae-9f1f-0ab03f8ae463" name="Changes" comment="Tilføjet at man kan se chancen for at slå 1-6">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceTest.java" afterDir="false" />
     </list>
@@ -209,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664273750064</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Tilføjet at man kan se chancen for at slå 1-6">
+      <created>1664388291059</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1664388291059</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +255,8 @@
     <MESSAGE value="Slettet noget vi ikke brugte i game2" />
     <MESSAGE value="Slettet noget vi ikke brugte i game1" />
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+    <MESSAGE value="Tilføjet at man kan se chancen for at slå 1-6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tilføjet at man kan se chancen for at slå 1-6" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
