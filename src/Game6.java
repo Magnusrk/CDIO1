@@ -2,21 +2,22 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Game6 {
-    static int p1Sum; //Player 1 sum
-    static int p2Sum; //Player 2 sum
-    static boolean p1ThrowIs6; //Player 1 throw is 6
-    static boolean p1ThrowWas6; //Player 1 throw was 6
-    static boolean p2ThrowIs6; //Player 2 throw is 6
-    static boolean p2ThrowWas6; //Player 2 throw was 6
-    static boolean p1sumOver40; //Player 1 point is over 40
-    static boolean p2sumOver40; //Player 2 point is over 40
-    static boolean gameIsOver;
-    static DiceUI ui;
+    static int p1Sum;               //Spiller 1's sum
+    static int p2Sum;               //Spiller 2's sum
+    static boolean p1ThrowIs6;      //Om spiller 1's kast er to 6'ere
+    static boolean p1ThrowWas6;     //Om spiller 1's kast var to 6'ere i sidste runde
+    static boolean p2ThrowIs6;      //Om spiller 2's kast er to 6'ere
+    static boolean p2ThrowWas6;     //Om spiller 2's kast var to 6'ere i sidste runde
+    static boolean p1sumOver40;     //Spiller 1's point er over 40
+    static boolean p2sumOver40;     //Spiller 2's point er over 40
+    static boolean gameIsOver;      //Spillet er slut
+    static DiceUI ui;               //UI objekt til at opdatere UI'en.
 
     public static void main(String[] args) {
             initGame();
     }
 
+    //Initialiser UI
     private static void initGame()
     {
         EventQueue.invokeLater(() -> {
@@ -27,6 +28,7 @@ public class Game6 {
         });
     }
 
+    //Spil en tur
     public static void playGame(int Player){
         DiceUI.DiceBoard.UpdateMessage("Spiller " + Player + "'s tur! ");
         //input.nextLine();
@@ -36,6 +38,7 @@ public class Game6 {
         checkWinner(Player, dieResults);
     }
 
+    //Tjek om terningekastet var "snake eyes" (to énere)
     private static void snakeEyesCheck(int Player, int[] dieResults) {
         if(dieResults[0]==1 && dieResults[1]==1){
             if(Player == 1) {
@@ -68,6 +71,7 @@ public class Game6 {
         }
     }
 
+    //Forøg scoren og opdatér GUI'en
     private static void addScores(int Player, int[] dieResults) {
 
         if (Player == 1) {
@@ -79,6 +83,7 @@ public class Game6 {
         }
     }
 
+    //Tjek om der er en vinder og opdatér GUI'en
     private static void checkWinner(int Player, int[] dieResults) {
         if (p1sumOver40 && (dieResults[0] != 1 && dieResults[0]==dieResults[1] && Player == 1) || p1ThrowWas6) {
             DiceUI.DiceBoard.UpdateMessage("Spiller 1 vandt!");
@@ -98,10 +103,11 @@ public class Game6 {
         }
         else
         {
-            resetGame();
+            resetGame();        //Hvis der er fundet en vinder, genstart spillet
         }
     }
 
+    //Reset alle variabler, så spillet kan spilles på ny
     private static void resetGame()
     {
         gameIsOver = false;
@@ -115,12 +121,14 @@ public class Game6 {
         p2ThrowWas6 = false;
     }
 
-    public static int[] throwDice(){
+    //metode for kast af terninger
+    private static int[] throwDice(){
         int die1 = (int) ((Math.random() * (6)) + 1);
         int die2 = (int) ((Math.random() * (6)) + 1);
         return new int[]{die1, die2};
     }
 
+    //Tjek om spilleren har ekstratur baseret på de kastede terninger. Opdatér grafikken.
     private static void checkExtraTurn(int Player, int[] dieResults) {
         if (dieResults[0] != 1 && dieResults[0] == dieResults[1]) {
             DiceUI.DiceBoard.DrawGraphics(Player, p1Sum,p2Sum, dieResults[0], dieResults[1]);

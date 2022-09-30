@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class DiceGame {
-    static boolean p1Turn = true;
     static int p1Sum;
     static int p2Sum;
     static boolean p1is6;
